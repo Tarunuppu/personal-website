@@ -7,6 +7,7 @@ import AboutMe from './pages/aboutMe'
 import Skills from './pages/skills'
 import ExpAndEdu from './pages/expAndEdu'
 import Projects from './pages/projects'
+import Contact from './pages/contact'
 import Expbackground from './assets/background.jpg'
 
 const Base = styled.div`
@@ -19,7 +20,8 @@ const Base = styled.div`
   .page-1,
   .page-2,
   .page-3,
-  .page-4 {
+  .page-4,
+  .page-5 {
     width: 100%;
     height: 100%;
     // position: sticky;
@@ -36,6 +38,9 @@ const Base = styled.div`
   }
   .page-4 {
     z-index: 4;
+  }
+  .page-5 {
+    z-index: 5;
   }
 `
 class App extends Component {
@@ -58,6 +63,9 @@ class App extends Component {
         </div>
         <div id="page-4" className="page-4">
           <Projects />
+        </div>
+        <div id="page-5" className="page-5">
+          <Contact />
         </div>
       </Base>
     )

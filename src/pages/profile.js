@@ -70,21 +70,32 @@ const Intro = styled.div`
       //   margin-right: 5px;
       box-shadow: 0 0 15px 5px rgba(183, 224, 255, 1) !important;
     }
-    // .resume {
-    //   background-color: #a04747;
-    // }
-    // .work {
-    //   background-color: #16325b;
-    // }
-    // .contact {
-    //   background-color: #fabc3f;
-    // }
-    // .project {
-    //   background-color: #fa812f;
-    // }
-    // .skills {
-    //   background-color: #6a1e55;
-    // }
+    .resume {
+      position: relative;
+      a {
+        text-decoration: none;
+        color: white;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .download-icon {
+        position: absolute;
+        display:  none;
+        font-size: 1em;
+      }
+      &:hover{
+        a {
+          opacity: 0;
+        }
+        .download-icon {
+          display: block;
+        }
+      }
+    }
   }
 `
 const ImgBlock = styled.div`
@@ -133,7 +144,13 @@ class Profile extends Component {
           <div className="title">Hi, I'm Tarun.</div>
           <div className="description">I build web applications</div>
           <div className="nav-list">
-            <div className="resume">Resume</div>
+            <div className="resume">
+              <a href="/resume.pdf" download="Tarun_Uppu_Resume.pdf" >Resume
+              </a>
+              <span className="download-icon">
+                <i className="fas fa-download"></i>
+              </span>
+            </div>
             <div className="skills" onClick={() => scrollPage(2)}>
               Skills
             </div>
@@ -143,7 +160,9 @@ class Profile extends Component {
             <div className="project" onClick={() => scrollPage(4)}>
               Projects
             </div>
-            <div className="contact">Contact</div>
+            <div className="contact" onClick={() => scrollPage(5)}>
+              Contact
+            </div>
           </div>
         </Intro>
       </Template>
