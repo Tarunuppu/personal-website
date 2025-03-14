@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import profileImage from '../assets/profile.jpg'
 import avatar from '../assets/Avatar.png'
 const Template = styled.div`
-  background-color: #ecdfcc;
+  //   background-color: #ecdfcc;
   height: 100%;
   width: 100%;
   color: white;
@@ -18,19 +18,19 @@ const Template = styled.div`
 const Intro = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
   height: 100%;
   justify-content: center;
   color: #674636;
   .title {
     font-size: 70px;
     font-weight: 600;
-    color: #180161;
+    color: white;
   }
   .description {
     font-size: 30px;
     font-weight: 400;
-    color: #982b1c;
+    color: white;
   }
   .nav-list {
     display: flex;
@@ -41,7 +41,7 @@ const Intro = styled.div`
     .resume,
     .work,
     .contact,
-    .education,
+    .project,
     .skills {
       display: flex;
       justify-content: center;
@@ -51,36 +51,40 @@ const Intro = styled.div`
       border-radius: 50%;
       align-content: center;
       color: white;
-      font-size: 20px;
-      margin-right: 10px;
-      transition: width 0.5s ease, font-size 0.5s ease;
+      font-size: 17px;
+      margin-right: calc(3% + 5px);
+      transition: width 0.5s ease, font-size 0.5s ease, box-shadow 0.5s ease,
+        margin-right 0.5s ease;
       height: fit-content;
       cursor: pointer;
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
     }
 
     .resume:hover,
     .work:hover,
     .contact:hover,
-    .education:hover,
+    .project:hover,
     .skills:hover {
-      width: 23%;
-      font-size: 25px;
+      //   width: 23%;
+      font-size: 24px;
+      //   margin-right: 5px;
+      box-shadow: 0 0 15px 5px rgba(183, 224, 255, 1) !important;
     }
-    .resume {
-      background-color: #a04747;
-    }
-    .work {
-      background-color: #16325b;
-    }
-    .contact {
-      background-color: #fabc3f;
-    }
-    .education {
-      background-color: #fa812f;
-    }
-    .skills {
-      background-color: #6a1e55;
-    }
+    // .resume {
+    //   background-color: #a04747;
+    // }
+    // .work {
+    //   background-color: #16325b;
+    // }
+    // .contact {
+    //   background-color: #fabc3f;
+    // }
+    // .project {
+    //   background-color: #fa812f;
+    // }
+    // .skills {
+    //   background-color: #6a1e55;
+    // }
   }
 `
 const ImgBlock = styled.div`
@@ -116,6 +120,7 @@ const ImgBlock = styled.div`
 
 class Profile extends Component {
   render() {
+    const { scrollPage } = this.props
     return (
       <Template>
         <ImgBlock>
@@ -129,9 +134,15 @@ class Profile extends Component {
           <div className="description">I build web applications</div>
           <div className="nav-list">
             <div className="resume">Resume</div>
-            <div className="skills">Skills</div>
-            <div className="work">Work</div>
-            <div className="education">Education</div>
+            <div className="skills" onClick={() => scrollPage(2)}>
+              Skills
+            </div>
+            <div className="work" onClick={() => scrollPage(3)}>
+              Edu & Exp
+            </div>
+            <div className="project" onClick={() => scrollPage(4)}>
+              Projects
+            </div>
             <div className="contact">Contact</div>
           </div>
         </Intro>

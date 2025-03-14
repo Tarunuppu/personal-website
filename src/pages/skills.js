@@ -20,9 +20,14 @@ import AWS from '../assets/AWS.png'
 import Mysql from '../assets/Mysql.png'
 import MongoDb from '../assets/MongoDb.png'
 import Git from '../assets/Git.png'
+import Expbackground from '../assets/background.jpg'
 
 const Template = styled.div`
-  background-color: #fcfaee;
+  //   background-color: #fcfaee;
+  //   background-size: cover;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-image: url(${Expbackground});
   height: 100%;
   width: 100%;
   display: flex;
@@ -36,7 +41,9 @@ const Template = styled.div`
     align-items: end;
     justify-content: center;
     font-family: cursive;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid white;
+    color: white;
+    margin-bottom: 10px;
   }
   .skills {
     height: 80%;
@@ -51,7 +58,19 @@ const Template = styled.div`
       img {
         width: 100px;
         max-height: 100px;
-        margin: 30px;
+        margin: 25px;
+        padding: 20px;
+        transition: width 0.5s ease, max-height 0.5s ease,
+          background-color 0.5s ease, box-shadow 0.5s ease,
+          border-radius 0.5s ease, margin 0.5s ease;
+        &:hover {
+          width: 120px;
+          max-height: 120px;
+          box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+          background-color: white;
+          margin: 15px;
+        }
       }
     }
   }

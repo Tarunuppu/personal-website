@@ -3,19 +3,19 @@ import styled from 'styled-components'
 import IITKgp from '../assets/IITKgp.png'
 import VMock from '../assets/VMock.png'
 import Citrix from '../assets/Citrix.png'
-import Expbackground from '../assets/exp-background.png'
+import Expbackground from '../assets/background.jpg'
 
 const Template = styled.div`
-  background-image: url(${Expbackground});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  //   background-image: url(${Expbackground});
+  //   background-size: cover;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
   .template-background {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(10px);
+    // background-color: rgba(255, 255, 255, 0.1);
+    // backdrop-filter: blur(7px);
+    // -webkit-backdrop-filter: blur(10px);
     height: 100%;
     width: 100%;
     display: flex;
