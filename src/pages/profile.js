@@ -145,7 +145,7 @@ class Profile extends Component {
           <div className="description">I build web applications</div>
           <div className="nav-list">
             <div className="resume">
-              <a href="/resume.pdf" download="Tarun_Uppu_Resume.pdf" >Resume
+              <a href={`${process.env.PUBLIC_URL}/resume.pdf`} download="Tarun_Uppu_Resume.pdf" >Resume
               </a>
               <span className="download-icon">
                 <i className="fas fa-download"></i>
