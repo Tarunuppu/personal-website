@@ -4,7 +4,7 @@ import profileImage from '../assets/profile.jpg'
 import avatar from '../assets/Avatar.png'
 const Template = styled.div`
   //   background-color: #ecdfcc;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   color: white;
   font-family: roboto;

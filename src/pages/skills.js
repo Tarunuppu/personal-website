@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Html from '../assets/Html.png'
 import Css from '../assets/Css.png'
 import JavaScript from '../assets/JavaScript.png'
@@ -23,94 +24,97 @@ import Git from '../assets/Git.png'
 import Expbackground from '../assets/background.jpg'
 
 const Template = styled.div`
-  //   background-color: #fcfaee;
-  //   background-size: cover;
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-image: url(${Expbackground});
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  
   .page-title {
-    height: 15%;
+    height: 60px;
     width: 60%;
     font-size: 40px;
     display: flex;
     align-items: end;
     justify-content: center;
-    font-family: cursive;
     border-bottom: 1px solid white;
     color: white;
-    margin-bottom: 10px;
+    margin: 10px 0px;
   }
-  .skills {
-    height: 80%;
+  
+  .skills-container {
     width: 100%;
+  }
+  
+  .skill-item {
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      img {
-        width: 100px;
-        max-height: 100px;
-        margin: 25px;
-        padding: 20px;
-        transition: width 0.5s ease, max-height 0.5s ease,
-          background-color 0.5s ease, box-shadow 0.5s ease,
-          border-radius 0.5s ease, margin 0.5s ease;
-        &:hover {
-          width: 120px;
-          max-height: 120px;
-          box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
-          border-radius: 10px;
-          background-color: white;
-          margin: 15px;
-        }
-      }
+    margin-bottom: 20px;
+  }
+  
+  .skill-icon {
+    width: 70%;
+    aspect-ratio: auto;
+    padding: 11%;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease,
+      border-radius 0.5s ease, padding 0.5s ease;
+    
+    &:hover {
+      padding: 10%;
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      background-color: white;
     }
   }
-  .skills {
-    width: 80%;
-  }
 `
+
 class Skills extends Component {
   render() {
+    const skillsData = [
+      { name: 'Python', image: Python },
+      { name: 'JavaScript', image: JavaScript },
+      { name: 'C++', image: Cplusplus },
+      { name: 'Flask', image: Flask },
+      { name: 'UWSGI', image: Uwsgi },
+      { name: 'AWS', image: AWS },
+      { name: 'PHP', image: Php },
+      { name: 'C', image: C },
+      { name: 'Bootstrap', image: Bootstrap },
+      { name: 'Kubernetes', image: K8s },
+      { name: 'Git', image: Git },
+      { name: 'React', image: ReactImage },
+      { name: 'Node.js', image: Nodejs },
+      { name: 'HTML', image: Html },
+      { name: 'Laravel', image: Laravel },
+      { name: 'CSS', image: Css },
+      { name: 'Docker', image: Docker },
+      { name: 'jQuery', image: Jquery },
+      { name: 'MySQL', image: Mysql },
+      { name: 'MongoDB', image: MongoDb },
+    ];
+
     return (
       <Template>
         <div className="page-title">
           <div>Skills</div>
         </div>
-        <div className="skills">
-          <div>
-            <img src={Html} />
-            <img src={Css} />
-            <img src={JavaScript} />
-            <img src={Python} />
-            <img src={Php} />
-            <img src={C} />
-            <img src={Cplusplus} />
-          </div>
-          <div>
-            <img src={Jquery} />
-            <img src={Bootstrap} />
-            <img src={ReactImage} />
-            <img src={Nodejs} />
-            <img src={Flask} />
-            <img src={Laravel} />
-          </div>
-          <div>
-            <img src={AWS} />
-            <img src={Docker} />
-            <img src={K8s} />
-            <img src={Uwsgi} />
-            <img src={Mysql} />
-            <img src={MongoDb} />
-            <img src={Git} />
+
+        <div className="skills-container">
+          <div className="container">
+            <div className="row">
+              {skillsData.map((skill, index) => (
+                <div key={index} className="col-6 col-sm-4 col-md-3 col-lg-2 skill-item">
+                  <img
+                    src={skill.image}
+                    alt={skill.name}
+                    className="skill-icon"
+                    title={skill.name}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Template>

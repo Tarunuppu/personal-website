@@ -23,7 +23,7 @@ const Base = styled.div`
   .page-4,
   .page-5 {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     // position: sticky;
     top: 0;
   }

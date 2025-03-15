@@ -5,7 +5,7 @@ import Logo from '../assets/Logo.png'
 import Updown from '../assets/updown.png'
 
 const Template = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -51,7 +51,7 @@ const Template = styled.div`
     }
   }
   .screenshots {
-    height: calc(100% - 60px);
+    height: 100%;
     padding: 30px 0px;
     width: 60%;
     display: flex;
@@ -62,6 +62,7 @@ const Template = styled.div`
     position: relative;
     img {
       height: 80%;
+      max-width: 100%;
       border-radius: 10px;
     }
   }

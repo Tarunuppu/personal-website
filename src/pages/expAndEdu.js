@@ -6,16 +6,9 @@ import Citrix from '../assets/Citrix.png'
 import Expbackground from '../assets/background.jpg'
 
 const Template = styled.div`
-  //   background-image: url(${Expbackground});
-  //   background-size: cover;
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   .template-background {
-    // background-color: rgba(255, 255, 255, 0.1);
-    // backdrop-filter: blur(7px);
-    // -webkit-backdrop-filter: blur(10px);
     height: 100%;
     width: 100%;
     display: flex;
@@ -29,12 +22,13 @@ const Template = styled.div`
       .title {
         display: flex;
         justify-content: center;
+        height: 20%;
         font-size: 40px;
         color: white;
         margin: 0 25%;
       }
       .content {
-        height: -webkit-fill-available;
+        height: 80%;
         justify-content: center;
         align-items: center;
         margin-left: 50px;
@@ -43,6 +37,7 @@ const Template = styled.div`
         flex-direction: column;
         .container {
           width: 100%;
+          height: 30%;
           position: relative;
           justify-content: start;
           align-items: center;
@@ -52,8 +47,8 @@ const Template = styled.div`
           box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
           transition: box-shadow 0.5s ease;
           .picture {
-            width: 120px;
-            height: 120px;
+            height: 80%;
+            aspect-ratio: 1;
             border-radius: 10px;
             margin: 10px;
           }
@@ -64,6 +59,9 @@ const Template = styled.div`
               font-size: 20px;
               font-weight: 900;
             }
+            p {
+                margin-bottom: 10px;
+            }
             transition: color 0.5s ease;
           }
         }
@@ -72,10 +70,10 @@ const Template = styled.div`
     .experience {
       .container {
         &.one {
-          top: -100px;
+          top: -15%;
         }
         &.two {
-          top: 100px;
+          top: 15%;
         }
       }
       .container:hover {
@@ -112,11 +110,11 @@ const Template = styled.div`
       border-radius: 50%;
       background-color: #000;
       &.edu {
-        right: -50px;
+        right: -60px;
         transform: translateX(1px);
       }
       &.exp {
-        left: -50px;
+        left: -60px;
         transform: translateX(-1px);
       }
       transition: background-color 0.5s ease;

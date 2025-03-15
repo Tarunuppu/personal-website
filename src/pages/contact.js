@@ -8,7 +8,7 @@ import GitHubIcon from '../assets/github.png';
 
 
 const Template = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -18,7 +18,7 @@ const Template = styled.div`
 const LeftContainer = styled.div`
     position: relative;
     top: -70px;
-    width: 30%;
+    width: 50%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ const ContactDetails = styled.div`
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    max-width: 500px;
+    max-width: 450px;
     img{
       width: 50px;
       height: 50px;
@@ -67,7 +67,7 @@ const ContactDetails = styled.div`
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   
   form {
