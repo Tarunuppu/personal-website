@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 const MOBILE_BREAKPOINT_WIDTH = 601;
 
-const TABLET_BREAKPOINT_WIDTH = 900;
+const TABLET_BREAKPOINT_WIDTH = 1000;
 
 const ResolutionContext = createContext(false);
 
