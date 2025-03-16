@@ -23,12 +23,12 @@ const Intro = styled.div`
   justify-content: center;
   color: #674636;
   .title {
-    font-size: 70px;
+    font-size: 5vw;
     font-weight: 600;
     color: white;
   }
   .description {
-    font-size: 30px;
+    font-size: 2.1vw;
     font-weight: 400;
     color: white;
   }
@@ -51,7 +51,7 @@ const Intro = styled.div`
       border-radius: 50%;
       align-content: center;
       color: white;
-      font-size: 17px;
+      font-size: 1.2vw;
       margin-right: calc(3% + 5px);
       transition: width 0.5s ease, font-size 0.5s ease, box-shadow 0.5s ease,
         margin-right 0.5s ease;
@@ -66,7 +66,7 @@ const Intro = styled.div`
     .project:hover,
     .skills:hover {
       //   width: 23%;
-      font-size: 24px;
+      font-size: 1.7vw;
       //   margin-right: 5px;
       box-shadow: 0 0 15px 5px rgba(183, 224, 255, 1) !important;
     }
@@ -85,7 +85,7 @@ const Intro = styled.div`
       .download-icon {
         position: absolute;
         display:  none;
-        font-size: 1em;
+        font-size: 1.2vw;
       }
       &:hover{
         a {

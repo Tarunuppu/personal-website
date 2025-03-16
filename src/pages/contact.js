@@ -13,19 +13,29 @@ const Template = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  &.tablet{
+    flex-direction: column;
+  }
 `
 
 const LeftContainer = styled.div`
     position: relative;
-    top: -70px;
+    top: -5vw;
     width: 50%;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    font-size: 70px;
+    font-size: 5vw;
     padding-left: 20%;
+    &.tablet{
+        padding-left: 0px;
+        width: 100%;
+        height: 30%;
+        align-items: center;
+        justify-content: end;
+    }
     .title{
         margin-bottom: 20px;
     }
@@ -50,12 +60,18 @@ const RightContainer = styled.div`
     align-items: start;
     justify-content: center;
     gap: 30px;
+    &.tablet{
+        align-items: center;
+        width: 100%;
+        height: 70%;
+        justify-content: start;
+    }
 `
 
 const ContactDetails = styled.div`
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     justify-content: center;
     max-width: 450px;
     img{
@@ -68,7 +84,7 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 450px;
-  width: 100%;
+  width: 80%;
   
   form {
     display: flex;
@@ -178,15 +194,15 @@ class Contact extends Component {
 
     render() {
         const { name, email, message, formStatus } = this.state;
-
+        const { isTablet } = this.props;
         return (
-            <Template>
-                <LeftContainer>
+            <Template className={`${isTablet ? 'tablet' : ''}`}>
+                <LeftContainer className={`${isTablet ? 'tablet' : ''}`}>
                     <div className='title'>Contact</div>
                     <div className='description'>Love to here from you,</div>
                     <div className='description'>Get in touch <img src={Waving} /></div>
                 </LeftContainer>
-                <RightContainer>
+                <RightContainer className={`${isTablet ? 'tablet' : ''}`}>
                     <FormContainer>
                         <form ref={this.formRef} onSubmit={this.handleSubmit}>
                             <label>

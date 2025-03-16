@@ -34,11 +34,10 @@ const Template = styled.div`
   .page-title {
     height: 60px;
     width: 60%;
-    font-size: 40px;
+    font-size: calc(1.375rem + 1.5vw);
     display: flex;
     align-items: end;
     justify-content: center;
-    border-bottom: 1px solid white;
     color: white;
     margin: 10px 0px;
   }

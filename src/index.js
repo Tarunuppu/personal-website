@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -6,8 +6,11 @@ import MobileApp from './MobileApp';
 import reportWebVitals from './reportWebVitals';
 
 
-const MOBILE_BREAKPOINT_WIDTH = 1000;
-const MOBILE_BREAKPOINT_HEIGHT = 720;
+const MOBILE_BREAKPOINT_WIDTH = 601;
+
+const TABLET_BREAKPOINT_WIDTH = 900;
+
+const ResolutionContext = createContext(false);
 
 const ResponsiveApp = () => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -23,7 +26,11 @@ const ResponsiveApp = () => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  return (windowWidth < MOBILE_BREAKPOINT_WIDTH || windowHeight < MOBILE_BREAKPOINT_HEIGHT) ? <MobileApp /> : <App />;
+
+  let isTablet = windowWidth < TABLET_BREAKPOINT_WIDTH;
+  return (windowWidth < MOBILE_BREAKPOINT_WIDTH) ?
+    <MobileApp /> :
+    <ResolutionContext.Provider values={{ isTablet }}> <App isTablet={isTablet} /> </ResolutionContext.Provider>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

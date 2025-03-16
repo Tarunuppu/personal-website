@@ -10,12 +10,19 @@ const Template = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  &.tablet{
+    flex-direction: column;
+  }
   .description {
     padding: 0px 30px;
     height: 100%;
     width: 40%;
     color: white;
     align-content: center;
+    &.tablet {
+      width: 100%;
+      height: 40%;
+    }
     .title {
       display: flex;
       flex-direction: row;
@@ -28,6 +35,9 @@ const Template = styled.div`
         margin-right: 10px;
       }
     }
+    .tagline{
+      font-size: 20px;
+    }
     ul {
       list-style: none;
       padding-left: 20px;
@@ -35,6 +45,7 @@ const Template = styled.div`
         position: relative;
         padding-left: 40px;
         margin: 30px 0px;
+        font-size: 16px;
         &::before {
           content: '';
           position: absolute;
@@ -60,6 +71,10 @@ const Template = styled.div`
     justify-content: center;
     gap: 20px;
     position: relative;
+    &.tablet {
+      width: 100%;
+      height: 60%;
+    }
     img {
       height: 80%;
       max-width: 100%;
@@ -69,18 +84,17 @@ const Template = styled.div`
 `
 export default class Projects extends Component {
   render() {
+    const { isTablet } = this.props
     return (
       <>
-        <Template>
-          <div className="description">
+        <Template className={isTablet ? 'tablet' : ''}>
+          <div className={`description ${isTablet ? 'tablet' : ''}`}>
             <div className="title">
               <img src={Logo} />
               <h1>UpDown</h1>
             </div>
             <br />
-            <div>Upload, Download and Done!</div>
-            <br />
-            <br />
+            <div className='tagline'>Upload, Download and Done!</div>
             <div>
               <ul>
                 <li>
@@ -105,7 +119,7 @@ export default class Projects extends Component {
               </ul>
             </div>
           </div>
-          <div className="screenshots">
+          <div className={`screenshots ${isTablet ? 'tablet' : ''}`}>
             <img src={Updown} />
           </div>
         </Template>

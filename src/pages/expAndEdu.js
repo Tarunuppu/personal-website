@@ -23,13 +23,13 @@ const Template = styled.div`
         display: flex;
         justify-content: center;
         height: 20%;
-        font-size: 40px;
+        font-size: calc(1.375rem + 1.5vw);
         color: white;
         margin: 0 25%;
       }
       .content {
         height: 80%;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         margin-left: 50px;
         margin-right: 50px;
@@ -54,13 +54,16 @@ const Template = styled.div`
           }
           .data {
             padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
             color: rgba(255, 255, 255, 0.5);
             .highlight {
               font-size: 20px;
               font-weight: 900;
             }
             p {
-                margin-bottom: 10px;
+              margin-bottom: 0;
             }
             transition: color 0.5s ease;
           }
@@ -68,12 +71,10 @@ const Template = styled.div`
       }
     }
     .experience {
-      .container {
-        &.one {
-          top: -15%;
-        }
-        &.two {
-          top: 15%;
+      &.education{
+        width: 100%;
+        .title {
+          align-items: center;
         }
       }
       .container:hover {
@@ -137,46 +138,61 @@ const Template = styled.div`
 
 class ExpAndEdu extends Component {
   render() {
+    const { isTablet } = this.props
     return (
       <Template>
         <div className="template-background">
-          <div className="education">
-            <div className="title">Education</div>
-            <div className="content">
-              <div className="container">
-                <img className="picture" src={IITKgp} />
-                <div className="data">
-                  <p className="highlight">IIT Kharagpur</p>
-                  <p>B.Tech in Electronics and Electrical Communications</p>
-                  <p>Jul 2018 - Apr 2022</p>
+          {!isTablet &&
+            <div className="education">
+              <div className="title">Education</div>
+              <div className="content">
+                <div className="container">
+                  <img className="picture" src={IITKgp} />
+                  <div className="data">
+                    <p className="highlight">IIT Kharagpur</p>
+                    <p>B.Tech in Electronics and Electrical Communications</p>
+                    <p>Jul 2018 - Apr 2022</p>
+                  </div>
+                  <div className="point edu"></div>
+                  <div className="line edu"></div>
                 </div>
-                <div className="point edu"></div>
-                <div className="line edu"></div>
               </div>
             </div>
-          </div>
-          <div className="experience">
-            <div className="title">Experience</div>
+          }
+          <div className={`experience ${isTablet ? 'education' : ''}`}>
+            <div className="title">{isTablet ? 'Exp & Edu' : 'Experience'}</div>
             <div className="content">
-              <div className="container one">
+              <div className="container">
                 <img className="picture" src={VMock} />
                 <div className="data">
-                  <p className="highlight">VMock</p>
+                  <p className="highlight">VMock {isTablet && "(Experience)"}</p>
                   <p>Software Developer / Full Stack Developer</p>
                   <p>Aug 2022 - Present</p>
                 </div>
-                <div className="point exp"></div>
-                <div className="line exp"></div>
+                {!isTablet && <>
+                  <div className="point exp"></div>
+                  <div className="line exp"></div>
+                </>}
               </div>
-              <div className="container two">
+              {isTablet && <div className="container">
+                <img className="picture" src={IITKgp} />
+                <div className="data">
+                  <p className="highlight">IIT Kharagpur (Education)</p>
+                  <p>B.Tech in Electronics and Electrical Communications</p>
+                  <p>Jul 2018 - Apr 2022</p>
+                </div>
+              </div>}
+              <div className="container">
                 <img className="picture" src={Citrix} />
                 <div className="data">
-                  <p className="highlight">Citrix</p>
+                  <p className="highlight">Citrix {isTablet && "(Experience)"}</p>
                   <p>Software Developer Intern</p>
                   <p>Summer Intern, 2021</p>
                 </div>
-                <div className="point exp"></div>
-                <div className="line exp"></div>
+                {!isTablet && <>
+                  <div className="point exp"></div>
+                  <div className="line exp"></div>
+                </>}
               </div>
             </div>
           </div>

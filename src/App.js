@@ -50,22 +50,23 @@ class App extends Component {
     pageElement.scrollIntoView({ behavior: 'smooth' })
   }
   render() {
+    const { isTablet } = this.props
     return (
       <Base>
         <div id="page-1" className="page-1">
-          <Profile scrollPage={this.scrollPage} />
+          <Profile scrollPage={this.scrollPage} isTablet={isTablet} />
         </div>
         <div id="page-2" className="page-2">
           <Skills />
         </div>
         <div id="page-3" className="page-3">
-          <ExpAndEdu />
+          <ExpAndEdu isTablet={isTablet} />
         </div>
         <div id="page-4" className="page-4">
-          <Projects />
+          <Projects isTablet={isTablet} />
         </div>
         <div id="page-5" className="page-5">
-          <Contact />
+          <Contact isTablet={isTablet} />
         </div>
       </Base>
     )
